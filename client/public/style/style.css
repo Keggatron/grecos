@@ -1,0 +1,126 @@
+/*Colors in project*/
+
+/*Orange -- #DB481C*/
+/*Dark -- #343a40*/
+
+
+.label {
+  font-family: 'Amatic SC', cursive;
+  font-size: 4em !important;
+  margin-bottom: 10px !important;
+  text-align: center !important;
+  
+}
+
+ul > li {
+  width: 100%;
+  margin: 0 4em ;
+}
+
+.header-link {
+  color: #fff;
+}
+.header-link:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.hero-picture {
+  width: 100%;
+  border-radius: 20px;
+  border: 3px solid #343a40;
+}
+
+.landing-snippet {
+  width: 100%;
+}
+
+.headings {
+  color: #DB481C;
+  font-size: 6em;
+  font-family: 'Nothing You Could Do', cursive;
+  text-align: center;
+  margin: .3em 0;
+}
+
+.line-break {
+	border-top: 2px solid #343a40;
+	width: 70%;
+}
+
+
+.pizzeria-pic {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.pizzeria-info {
+  margin: 5em 0;
+}
+
+.blurbs {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color:#343a40;
+  margin: 8% 0;
+}
+
+#pizza-info {
+  color: #DB481C;
+  width: 100%;
+  font-size: 4em;
+  font-family: 'Nothing You Could Do', cursive;
+  text-align: center;
+  margin: .3em 0;
+}
+
+.hours {
+  text-align: center;
+}
+
+
+.table-headings {
+  color: #DB481C;
+  font-size: 2em;
+  font-family: 'Nothing You Could Do', cursive;
+  text-align: center;
+  margin: .3em 0;
+}
+
+.table-subheadings {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color:#343a40;
+  font-weight: bold;
+}
+
+.ingredient-table {
+  width: 100% ;
+}
+
+.table-title {
+  text-align: left;
+}
+
+.table-price {
+  text-align: center;
+}
+
+/*table, th, td {*/
+/*    border: 1px solid black;*/
+/*}*/
+.pizza-row {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color:#343a40;
+  height: 30px;
+ }
+ 
+ td {
+   padding: 20px !important;
+ }
+ 
+ .footer {
+   height: 200px;
+   width: 100%;
+ }
