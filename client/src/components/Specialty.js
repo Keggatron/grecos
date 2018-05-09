@@ -20,9 +20,9 @@ class SpecialtyPizzas extends Component {
             <td className ="table-subheadings">
               {pizza.pizzaTitle}
             </td>
-            <td className="table-price" rowSpan="2"><button>${pizza.priceSm}</button></td>
-            <td className="table-price" rowSpan="2"><button>${pizza.priceMed}</button></td>
-            <td className="table-price" rowSpan="2"><button>${pizza.priceLg}</button></td>
+            <td className="table-price" rowSpan="2"><button >${pizza.priceSm}</button></td>
+            <td className="table-price" rowSpan="2"><button >${pizza.priceMed}</button></td>
+            <td className="table-price" rowSpan="2"><button >${pizza.priceLg}</button></td>
           </tr>
           <tr key={pizza._id} className="pizza-row">
             <td>

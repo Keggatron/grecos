@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import OrderType from '../components/OrderType'
-import OrderChoices from './OrderChoices'
-import OrderTotal from '../components/OrderTotal'
-import { createOrder } from '../actions/index'
+import io from 'socket.io-client';
+import OrderChoices from './OrderChoices';
+import OrderTotal from '../components/OrderTotal';
+import { createOrder } from '../actions/index';
+import { Redirect } from 'react-router-dom';
+import picture from '../images/pizza-on-firewood-furnace.jpg'
+
+
+let socket
 
 class OrderForm extends Component {
   constructor(props) {
@@ -11,6 +17,7 @@ class OrderForm extends Component {
     
     this.state = {
       page: 1,
+      redirect: false
     };
     this.nextPage = this.nextPage.bind(this);
     this.previousPage = this.previousPage.bind(this);
@@ -30,19 +37,39 @@ class OrderForm extends Component {
   }
   
   onSubmit(values, dispatch, props) {
+    socket = io.connect('https://projects-keggatron1.c9users.io:8081')
     return dispatch(createOrder(values))
     .then(() => {
-      this.props.history.push('/');
-    });
+      socket.emit('newOrder')
+    })
+    .then(() => {
+      this.setState({redirect: true });
+    })
+   
   }
   
   render() {
     const { handleSubmit } = this.props
     const { onSubmit } = this.props
     const { page } = this.state
+    const { redirect } = this.state
+    
+    if (redirect) {
+      // console.log('order',this.props.order)
+      return <Redirect to={{
+        pathname: '/ordersummary',
+        state: { referrer: this.props.order} 
+      }}/>
+    }
     
     return(
-      <div>
+      <div className="order-div">
+        <h1 className="headings">
+          Order Form
+        </h1>
+        <div>
+          <img className='form-picture' src={picture} alt='pizza'/>
+        </div>
   
         {page === 1 && (
           <OrderChoices
@@ -61,8 +88,13 @@ class OrderForm extends Component {
   }
 }
 
+function mapStateToProps(state) {
+  return{ order: state.orderDetails }
+}
+
 OrderForm.propTypes = {
   onSubmit: PropTypes.func.isRequired
 }
 
-export default OrderForm;
+export default 
+  connect(mapStateToProps, { createOrder })(OrderForm);

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Field, reduxForm } from 'redux-form';
 import { fetchToppings } from '../actions/index';
 import validate from '../validate';
 import _ from 'lodash';
@@ -8,10 +7,6 @@ import CheckBoxGroup from '../checkBoxGroup';
 
 
 class Toppings extends Component {
-   constructor(props) {
-      super(props);
-  }
-  
   componentDidMount() {
     this.props.fetchToppings();
   }
@@ -20,11 +15,12 @@ class Toppings extends Component {
  
   render() {
     const options = _.map(this.props.toppings, topping => ({label:topping.toppingName , value:topping.toppingName}));
+    
       
     return (
-      
-          <CheckBoxGroup options={options} name={this.props.fieldName} /> 
-       
+          
+          <CheckBoxGroup options={options} name={this.props.fieldName} className='col-xs-3'/> 
+          
     );
   }
 }

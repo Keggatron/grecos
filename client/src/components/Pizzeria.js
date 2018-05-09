@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import picture from '../images/pizza-oven.jpg'
 import GoogleMap from './GoogleMap';
 
 class Pizzeria extends Component {
@@ -13,7 +13,7 @@ class Pizzeria extends Component {
           <div className="row pizzeria-info">  
           
             <div className="col-xs-6">
-              <img className="pizzeria-pic" src="https://cdn.pixabay.com/photo/2017/07/25/09/08/pizza-oven-2537308_960_720.jpg"/>
+              <img className="pizzeria-pic" src={picture} alt='pizza in fireplace'/>
             </div>
             
             <div className="col-xs-6">
@@ -36,7 +36,7 @@ class Pizzeria extends Component {
           
           <div className="row pizzeria-info">
             
-            <div className="col-xs-6" className="blurbs hours">
+            <div className="col-xs-6 blurbs hours">
               Monday to Thursday    Noon - 11 PM
               <br />
               <br />
@@ -45,9 +45,9 @@ class Pizzeria extends Component {
               <br />
               Sunday                2 PM - 10 PM
             </div>
-            <div className="col-xs-6" className="blurbs hours">
+            
               <GoogleMap />
-            </div>
+            
           </div>
             
            

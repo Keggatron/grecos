@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import picture from '../images/main-pizza.jpeg'
 
 class Landing extends Component {
   render() {
@@ -10,7 +11,7 @@ class Landing extends Component {
           </h1>
         </div>
         <div className="container">
-          <img className='hero-picture' src="https://images.pexels.com/photos/263041/pexels-photo-263041.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb" />
+          <img className='hero-picture' src={picture} alt='pizza'/>
         </div>
         <div className="footer"></div>
       </div>

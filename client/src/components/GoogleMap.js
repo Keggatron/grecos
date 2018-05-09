@@ -4,20 +4,17 @@ import React, { Component } from 'react';
 class GoogleMap extends Component {
   componentDidMount() {
     new google.maps.Map(this.refs.map, {
+      zoom: 12,
       center: {
-        lat: 62.441,
-        lng:-114.362
-      },
-      zoom: 15
+        lat: -114.362,
+        lng: 62.441
+      }
     });
   }
   
   render() {
-    return <div ref="map" />;
-  
+    return <div ref="map" style={{height: '300px', width: '400px'}} />;
   }
 }
-
-
 
 export default GoogleMap;

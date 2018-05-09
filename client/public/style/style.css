@@ -2,27 +2,50 @@
 
 /*Orange -- #DB481C*/
 /*Dark -- #343a40*/
+h1, h2, h3, h4, h5, h6, p, a, ul, ol, li, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  background: transparent; 
+}
 
+body {
+  width: 100%;
+  margin: 0 auto;
+}
 
 .label {
   font-family: 'Amatic SC', cursive;
   font-size: 4em !important;
   margin-bottom: 10px !important;
   text-align: center !important;
-  
 }
+
+
+button{
+  height: 45px;
+  width: 100px;
+  background-color: #343a40;
+  color: #fff!important;
+  font-size:12px!important;
+  border-radius: 10px!important;
+}
+
+.header-div {
+  width: 100%;
+  text-align: center;
+}
+
 
 ul > li {
   width: 100%;
   margin: 0 4em ;
 }
 
-.header-link {
-  color: #fff;
-}
-.header-link:hover {
-  color: #fff;
-  text-decoration: none;
+.nav-link {
+  margin-left: 100px;
 }
 
 .hero-picture {
@@ -78,6 +101,10 @@ ul > li {
   text-align: center;
 }
 
+.map {
+  height: 200px;
+  width: 200px;
+}
 
 .table-headings {
   color: #DB481C;
@@ -119,8 +146,98 @@ ul > li {
  td {
    padding: 20px !important;
  }
+ th {
+   padding: 20px !important;
+ }
+ 
+ .admin-table > tr > th,
+ .admin-table > tr > td {
+   border: 2px solid black;
+ }
  
  .footer {
    height: 200px;
    width: 100%;
  }
+ 
+ul {
+  list-style-type: none;
+}
+
+.checkboxOne {
+    width: 40px;
+    height: 20px;
+    background: #343a40;
+    margin: 20px 80px;
+    position: relative;
+    border-radius: 10px;
+}
+
+.check-labels {
+  font-size: 1.50em;
+  vertical-align: text-top!important
+}
+
+.checkbox-label {
+  display: inline-block;
+  height: 100%;
+  vertical-align: top;
+}
+
+select {
+  margin: 50px;
+  width: 150px;
+  padding: 5px 35px 5px 5px;
+  font-size: 40px;
+  border: 1px solid #ccc;
+  height: 34px;
+}
+
+.order-type {
+  display: inline-block;
+}
+
+.choices {
+  width: 100%;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-right: 8%;
+  margin-left: 8%;
+}
+
+.nav-link {
+  margin: 0;
+}
+
+#order-ul {
+  margin-right: 10%;
+}
+
+label {
+  font-size: 16px;
+}
+
+.total {
+  font-size: 16px;
+  margin: 20px 10%;
+}
+
+.form-picture {
+  width: 30%;
+  height: 20%;
+  border-radius: 20px;
+  border: 3px solid #343a40;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.order-div {
+  height: 100px;
+  align-content: center;
+  
+}
+
+.form-control {
+  width: 75%!important;
+}

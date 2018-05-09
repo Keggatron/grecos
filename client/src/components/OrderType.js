@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import renderField from '../renderField';
+import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
 import validate from '../validate';
 
 const renderError = ({ meta: { touched, error }}) =>
@@ -8,9 +8,18 @@ const renderError = ({ meta: { touched, error }}) =>
 
 const OrderType = props => {
   const { handleSubmit } = props
+  const styles = {
+    block: {
+      maxWidth: 250,
+    },
+    radioButton: {
+      marginBottom: 16,
+    },
+  };
+  
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
+    <div>
+      <form onSubmit={handleSubmit}>
         <label>Select the type of order to make:</label>
         <div>
           <label>
@@ -25,11 +34,12 @@ const OrderType = props => {
           </label>
           <Field name="delivery" component={renderError} />
         </div>
-      </div>
+      
       <div>
-        <button type="submit" className="next">Next</button>
+        <button type="submit" className="button">Next</button>
       </div>
     </form>
+    </div>
 
   )
 

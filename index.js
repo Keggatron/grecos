@@ -1,19 +1,38 @@
 const express = require('express');
 const app = express();
+const socket = require('socket.io');
 const mongoose = require('mongoose');
 const keys = require('./config/keys');
 const bodyParser = require('body-parser');
 const SpecialtyPizza = require('./models/SpecialtyPizzas');
 const Topping = require('./models/Toppings');
-require('./routes/pizzaRoutes')(app);
+
 
 mongoose.connect(keys.mongoURI, {UseMongoClient: true});
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
+
+require('./routes/pizzaRoutes')(app);
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
 }
+
+
+const server = app.listen(process.env.PORT, process.env.IP, function() {
+  console.log("The Greco's app server has started");
+});
+
+const io = socket(server)
+
+io.on('connection', (socket) => {
+  console.log('made socket connection', socket.id);
+  
+  socket.on('newOrder', (data) => {
+    io.sockets.emit('newOrder', data);
+  });
+});
 
 // SpecialtyPizza.create(
 //   {
@@ -56,6 +75,3 @@ if (process.env.NODE_ENV === 'production') {
     
 //   ]
 //   )
-app.listen(process.env.PORT, process.env.IP, function() {
-  console.log("The Greco's app server has started");
-});

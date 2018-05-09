@@ -1,12 +1,14 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { connect } from "react-redux";
+import { BrowserRouter, Route } from "react-router-dom";
 
 import NavBar from './navbar';
 import Landing from './Landing';
 import Pizzeria from './Pizzeria';
 import Menu from './Menu';
 import OrderForm from '../containers/Order';
+import OrderSummary from './OrderSummary';
+import Admin from './Admin';
+import io from 'socket.io-client'
 
 class App extends Component {
   render() {
@@ -15,9 +17,11 @@ class App extends Component {
         <div>  
           <NavBar />
           <Route exact path='/' component={Landing} />
-          <Route exact path='/pizzeria' component={Pizzeria} />
-          <Route exact path='/menu' component={Menu} />
-          <Route exact path='/order' render={props => <OrderForm{...props} /> } />
+          <Route path='/pizzeria' component={Pizzeria} />
+          <Route path='/menu' component={Menu} />
+          <Route path='/order' render={props => <OrderForm{...props} /> } />
+          <Route path='/ordersummary' component={ OrderSummary } />
+          <Route exact path='/admin' component={ Admin } />
         </div>  
       </BrowserRouter>
     )

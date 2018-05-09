@@ -6,37 +6,44 @@ class NavBar extends Component {
   
   render() {
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div className="navbar-collapse collapse label">
-          <ul className="navbar-nav">
-            <li className="navbar-item">
+      
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark label">
+        <ul className="navbar-nav mr-auto">
+          <li>
             <Link 
               to="/"
-              className='header-link'
+              className='nav-link'
             > 
               Greco's Pizza
             </Link>
-            </li>
-            <li className="navbar-item">
+          </li>
+        </ul>  
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#grec-menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>    
+            
+        <div className="navbar-collapse collapse" id="grec-menu">
+          <ul className="navbar-nav mr-auto">
+            <li className="nav-item">
             <Link 
               to="/pizzeria"
-              className='header-link'
+              className='nav-link'
             > 
               Pizzeria
             </Link>  
             </li>
-            <li className="navbar-item">
+            <li className="nav-item">
             <Link 
               to="/menu"
-              className='header-link'
+              className='nav-link'
             > 
               Menu
             </Link>
             </li>
-            <li className="navbar-item">
+            <li className="nav-item">
             <Link 
               to="/order"
-              className='header-link'
+              className='nav-link'
             > 
               Order Now!
             </Link>
@@ -45,6 +52,12 @@ class NavBar extends Component {
             
         </div>
       </nav>
+      
+      
+      
+      
+      
+      
     );
   }
 }
