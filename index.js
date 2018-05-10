@@ -17,6 +17,16 @@ require('./routes/pizzaRoutes')(app);
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
+  
+  // production requests are sent to HTML rather than server
+  const path = require('path');
+  app.get('*', (req,res) => {
+    res.sendFile(path.join(__dirname, 'client', 'build','index.html'), (err) => {
+      if(err) {
+        res.status(500).send(err)
+      }
+    })
+  })
 }
 
 
