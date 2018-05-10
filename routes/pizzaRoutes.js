@@ -1,4 +1,5 @@
 const keys = require('../config/keys');
+const path = require('path');
 const SpecialtyPizzas = require('../models/SpecialtyPizzas');
 const Toppings = require('../models/Toppings');
 const Order = require('../models/Order');
@@ -19,6 +20,14 @@ function getDate() {
   return dformat
 }
 module.exports = app => {
+  // production requests are sent to HTML rather than server
+  app.get('/*', (req,res) => {
+    res.sendFile(path.join(__dirname, '../client/public/index.html'), (err) => {
+      if(err) {
+        res.status(500).send(err)
+      }
+    })
+  })
   // grab all specialty pizzas for menu
   app.get('/api/fetchspecialty', async (req,res) => {
     const pizzas = await SpecialtyPizzas.find({});
