@@ -41,12 +41,47 @@ io.on('connection', (socket) => {
 //     priceSm: 14.50,
 //     priceMed: 16.50,
 //     priceLg: 18.50
-//   }  
-// )
+//   },  
 
-// db.toppings.insert(
+//   {
+//     pizzaTitle: "Meat Lover's", 
+//     ingredients : [ "Pepperoni", "Crumbled Meatballs", "Red Onion", "Mozzarella", "Red Sauce" ], 
+//     priceSm : 14.5, 
+//     priceMed : 16.5, 
+//     priceLg: 18.5
+//   },
+//   {
+//     pizzaTitle : "White Heaven", 
+//     ingredients : [ "White Cream Sauce", "Bacon", "Chopped Garlic", "Mozzarella", "Oregano", "Arugula" ], 
+//     priceSm : 14.5, 
+//     priceMed : 16.5, 
+//     priceLg : 18.5
+//   },
+//   {
+//     pizzaTitle : "Barbeque Chicken", 
+//     ingredients : [ "Grilled Chicken", "Red Onion", "Banana Peppers", "Mozzarella", "Gorgonzola", "BBQ Sauce" ], 
+//     priceSm : 14.5, 
+//     priceMed : 16.5, 
+//     priceLg : 18.5
+//   },
+//   {
+//     pizzaTitle : "Saucisse",
+//     ingredients : [ "Italian Sausage", "Sauteed Onions", "Roasted Red Peppers", "Mozzarella", "Red Sauce" ],
+//     priceSm : 14.5, 
+//     priceMed : 16.5, 
+//     priceLg : 18.5
+//   },
+//   {
+//     pizzaTitle : "Margherita", 
+//     ingredients : [ "Basil", "Tomato", "Mozzarella" ], 
+//     priceSm : 14.5, 
+//     priceMed : 16.5, 
+//     priceLg : 18.5
+//   }
+// )
+// Topping.create(
 //   [
-//     { toppingName: "pepperoni" , toppingCategory: "meat"" },
+//     { toppingName: "pepperoni" , toppingCategory: "meat" },
 //     { toppingName: "crumbled meatball" , toppingCategory: "meat" },
 //     { toppingName: "italian sausage", toppingCategory: "meat" },
 //     { toppingName:  "smoked ham", toppingCategory: "meat" },
