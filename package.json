@@ -3,10 +3,7 @@
   "version": "1.0.0",
   "description": "Pizza delivery app",
   "main": "index.js",
-  "engines": {
-    "node": "8.9.3",
-    "npm": "6.0.0"
-  },
+  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
@@ -24,6 +21,7 @@
     "ejs": "^2.5.7",
     "express": "^4.16.2",
     "mongoose": "^5.0.7",
+    "nodemon": "^1.17.4",
     "react-router": "^4.2.0",
     "socket.io": "^2.1.0"
   }
