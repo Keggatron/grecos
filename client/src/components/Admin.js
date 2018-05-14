@@ -74,7 +74,7 @@ class Admin extends Component {
   constructor(props){
     super(props)
     
-    socket = io.connect('https://projects-keggatron1.c9users.io:8081' || process.env.MONGO_URI)
+    socket = io.connect('https://projects-keggatron1.c9users.io:8081' || process.env.PORT)
   
     socket.on('newOrder', () => {
       this.props.fetchOrders();

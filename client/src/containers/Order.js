@@ -37,7 +37,7 @@ class OrderForm extends Component {
   }
   
   onSubmit(values, dispatch, props) {
-    socket = io.connect('https://projects-keggatron1.c9users.io:8081' || process.env.MONGO_URI)
+    socket = io.connect('https://projects-keggatron1.c9users.io:8081' || process.env.PORT)
     return dispatch(createOrder(values))
     .then(() => {
       socket.emit('newOrder')
