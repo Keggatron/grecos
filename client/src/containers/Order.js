@@ -37,7 +37,7 @@ class OrderForm extends Component {
   }
   
   onSubmit(values, dispatch, props) {
-    socket = io.connect('https://projects-keggatron1.c9users.io:8081' || process.env.PORT)
+    socket = io.connect(process.env.PORT)
     return dispatch(createOrder(values))
     .then(() => {
       socket.emit('newOrder')

@@ -74,7 +74,7 @@ class Admin extends Component {
   constructor(props){
     super(props)
     
-    socket = io.connect('https://projects-keggatron1.c9users.io:8081' || process.env.PORT)
+    socket = io.connect(process.env.PORT)
   
     socket.on('newOrder', () => {
       this.props.fetchOrders();
