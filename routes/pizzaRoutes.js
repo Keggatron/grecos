@@ -52,12 +52,11 @@ module.exports = app => {
   // fetch all orders to display on admin page
   app.get('/api/fetchorders', async (req,res) => {
     const orders = await Order.find({"completed":false})
-    console.log(orders)
     res.send(orders)
   })
   
   app.put('/api/completeorder', async (req,res) => {
-     var id = Object.keys(req.body)[0]
+    var id = Object.keys(req.body)[0]
     const completed = await Order.findByIdAndUpdate(id, {
       completed: true
     })

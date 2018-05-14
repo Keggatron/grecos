@@ -27,7 +27,6 @@ export const fetchOrders = () => async dispatch => {
 }
 
 export const completeOrder = (id) => async dispatch => {
-  console.log('completeOrder', id )
   const res = await axios.put('/api/completeorder', id)
   
   dispatch({ type: COMPLETE_ORDER, payload: res.data})

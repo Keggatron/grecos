@@ -12,8 +12,6 @@ class Timer extends Component {
     this.state = {
       elapsed: this.fetchTime()
     }
-    
-    console.log(props)
   }
   
   fetchTime = () => {
@@ -24,7 +22,7 @@ class Timer extends Component {
     return this.setState({elapsed: this.fetchTime()});
   }
   componentDidMount() {
-    this.interval = setInterval(this.updateTime, 60000);
+    this.interval = setInterval(this.updateTime, 1000);
   }
   componentWillUnmount() {
     clearInterval(this.interval)
@@ -44,7 +42,6 @@ class Timer extends Component {
 }
 
 const RenderOrders = (props) => {
-  console.log(props.orders)
   const orders = props.orders
   
   return _.map(orders, (order, key) => {
@@ -89,13 +86,12 @@ class Admin extends Component {
   
   
   completeThisOrder = (event) => {
-    // console.log(event)
+    
     const id = event.target.id;
     this.props.completeOrder(id)
     .then(() => {
       this.props.fetchOrders()
-    }
-    )
+    })
   }
   
   componentDidMount() {
