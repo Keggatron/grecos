@@ -36,7 +36,7 @@ class Pizzeria extends Component {
           
           <div className="row pizzeria-info">
             
-            <div className="col-xs-6 blurbs hours">
+            <div className="col blurbs hours">
               Monday to Thursday    Noon - 11 PM
               <br />
               <br />
@@ -45,9 +45,9 @@ class Pizzeria extends Component {
               <br />
               Sunday                2 PM - 10 PM
             </div>
-            
+            <div className="col">
               <GoogleMap />
-            
+            </div>
           </div>
             
            

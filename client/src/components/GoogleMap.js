@@ -3,11 +3,14 @@ import React, { Component } from 'react';
 
 class GoogleMap extends Component {
   componentDidMount() {
+    let lat = 62.441491;
+    let lon = -114.363150
+    
     new google.maps.Map(this.refs.map, {
-      zoom: 12,
+      zoom: 15,
       center: {
-        lat: -114.362,
-        lng: 62.441
+        lat: lat,
+        lng: lon
       }
     });
   }
