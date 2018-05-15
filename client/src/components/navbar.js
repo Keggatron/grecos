@@ -7,8 +7,8 @@ class NavBar extends Component {
   render() {
     return (
       
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark label">
-        <ul className="navbar-nav mr-auto">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <ul className="navbar-brand mr-auto">
           <li>
             <Link 
               to="/"

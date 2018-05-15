@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import { reduxForm } from 'redux-form';
 
 class OrderSummary extends Component {
   constructor(props) {
@@ -9,6 +10,8 @@ class OrderSummary extends Component {
   
   render() {
     const summary = this.props.location.state.referrer
+    
+    
     
     return (
       <div className="total">
@@ -29,5 +32,8 @@ class OrderSummary extends Component {
   }
 }
 
-
-export default OrderSummary;
+export default reduxForm({
+  form: 'wizard',
+  destroyOnUnmount: true,
+  forceUnregisterOnUnmount: true
+})(OrderSummary);

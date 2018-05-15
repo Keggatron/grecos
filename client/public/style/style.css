@@ -16,14 +16,6 @@ body {
   margin: 0 auto;
 }
 
-.label {
-  font-family: 'Amatic SC', cursive;
-  font-size: 4em !important;
-  margin-bottom: 10px !important;
-  text-align: center !important;
-}
-
-
 button{
   height: 45px;
   width: 100px;
@@ -41,11 +33,6 @@ button{
 
 ul > li {
   width: 100%;
-  margin: 0 4em ;
-}
-
-.nav-link {
-  margin-left: 100px;
 }
 
 .hero-picture {
@@ -164,24 +151,36 @@ ul {
   list-style-type: none;
 }
 
+/*Toppings checkbox styling*/
+
 .checkboxOne {
     width: 40px;
     height: 20px;
     background: #343a40;
-    margin: 20px 80px;
     position: relative;
     border-radius: 10px;
 }
 
+#pizza-choices {
+  display: flex;
+  flex-direction: row;
+}
+
+#toppings {
+  display: flex;
+  flex-flow: row wrap;
+}
+
 .check-labels {
-  font-size: 1.50em;
-  vertical-align: text-top!important
+  font-size: 16px;
+  vertical-align: text-top!important;
+  
 }
 
 .checkbox-label {
   display: inline-block;
   height: 100%;
-  vertical-align: top;
+  line-height: 25px;
 }
 
 select {
@@ -205,15 +204,12 @@ select {
   margin-left: 8%;
 }
 
-.nav-link {
-  margin: 0;
-}
-
 #order-ul {
   margin-right: 10%;
 }
 
 label {
+  font-weight: bold; 
   font-size: 16px;
 }
 
@@ -240,4 +236,8 @@ label {
 
 .form-control {
   width: 75%!important;
+}
+
+.delivery-options {
+  font-size: 18px;
 }

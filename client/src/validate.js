@@ -28,7 +28,6 @@ const validate = values => {
     errors.paymentOption = 'Please select a payment option.'
   }
   
-  console.log('errors', errors)
   return errors
 }
 export default validate

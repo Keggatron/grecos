@@ -55,7 +55,6 @@ class OrderForm extends Component {
     const { redirect } = this.state
     
     if (redirect) {
-      // console.log('order',this.props.order)
       return <Redirect to={{
         pathname: '/ordersummary',
         state: { referrer: this.props.order} 

@@ -6,7 +6,7 @@ import {Field} from "redux-form";
 export default class CheckboxGroup extends React.Component {
 
     item = ({input, label}) => (
-        <label className='col-xs-3 check-labels'>
+        <label className='col-3 check-labels'>
             <input 
               type="checkbox" {...input} 
               className="checkboxOne"

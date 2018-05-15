@@ -14,7 +14,6 @@ const viewFormValues = () => {
 const FetchValues = connect(state => ({
     values: getFormValues('wizard')(state),
   }))(({ values }) => {
-    console.log(values)
     const pizzaSpecs = values.pizzas;
     var prices = []
     const getPrices = pizzaSpecs.map((pizza, i) => {

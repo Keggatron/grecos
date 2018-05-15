@@ -31,12 +31,12 @@ const renderPizzas = ({ fields, meta: { touched, error, submitFailed } }) => {
           
           
           <h4>Pizza #{index + 1}</h4>
-          <div className="row">
-            <div className="col-xs-2">
+          <div id="pizza-choices" className="row">
+            <div className="col-2">
               <Field name={`${pizza}.details`} component={SizeSelect} options={sizeOptions} />
               <Field name='details' component={renderError} />
             </div>
-            <div className="col-xs-10"> 
+            <div id="toppings" className="col-10"> 
               <Toppings fieldName={`${pizza}.toppings`} /> 
             </div>  
               <button 
@@ -56,23 +56,23 @@ const OrderChoices  = props => {
   const { handleSubmit, pristine, reset, submitting, previousPage } = props;
   return (
     <div className="choices">
-    <form onSubmit={handleSubmit}>
-      <label>Select the type of order to make:</label>
-      <div className='row'>
-        <Field name="order" component={renderField} type="radio" value='delivery' />{' '} <h3>Delivery</h3>
-      </div>
-      <div className='row'>
-        <Field name="order" component={renderField} type="radio" value='takeout'  />{' '} <h3>Takeout</h3>
-        <Field name="order" component={renderError} />
-      </div>
-      <FieldArray name="pizzas" component={renderPizzas} />
-      <div>
-        <button type="button" className="previous" onClick={previousPage}>
-          Previous
-        </button>
-        <button type="submit" className="next">Next</button>
-      </div>
-    </form>
+      <form onSubmit={handleSubmit}>
+        <label>Select the type of order to make:</label>
+        <div className='row'>
+          <Field name="order" component={renderField} type="radio" value='delivery' />{' '} <span className="delivery-options">Delivery</span>
+        </div>
+        <div className='row'>
+          <Field name="order" component={renderField} type="radio" value='takeout'  />{' '} <span className="delivery-options">Takeout</span>
+          <Field name="order" component={renderError} />
+        </div>
+        <FieldArray name="pizzas" component={renderPizzas} />
+        <div>
+          <button type="button" className="previous" onClick={previousPage}>
+            Previous
+          </button>
+          <button type="submit" className="next">Next</button>
+        </div>
+      </form>
     </div>
   )
 }
