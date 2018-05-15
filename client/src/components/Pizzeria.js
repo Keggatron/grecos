@@ -12,11 +12,11 @@ class Pizzeria extends Component {
           <hr className="line-break" />
           <div className="row pizzeria-info">  
           
-            <div className="col-xs-6">
+            <div className="col">
               <img className="pizzeria-pic" src={picture} alt='pizza in fireplace'/>
             </div>
             
-            <div className="col-xs-6">
+            <div className="col">
               <p className="blurbs">
                 Here at Greco's we believe that the best tasting pizza comes from using the freshest ingredients. Using dough made fresh daily as well as mozzarella made in store, 
                 Greco's provides the freshest and best tasting pizza in town. 
